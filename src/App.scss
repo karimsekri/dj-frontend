@@ -4,23 +4,34 @@
   padding: 2rem;
   text-align: center;
 }
-.connexion{
+
+body {
+  background-color: #D9D9D9;
+}
+
+.connexion {
   display: flex;
   flex-direction: column;
   width: 400px;
 
-  label{
+  label {
     text-align: left;
     font-size: 10px;
   }
-  
-  p{
+
+  p {
     font-size: 50px;
-    color : #A33498;
+    color: #A33498;
   }
 
-  button{
-    background-color:#5E5BFF;
+  button {
+    background-color: #5E5BFF;
     width: 120px;
+  }
+
+  input {
+    margin-bottom: 20px;
+    height: 48px;
+    border-radius: 5px;
   }
 }
