@@ -35,3 +35,12 @@ body {
     border-radius: 5px;
   }
 }
+
+.musiques{
+  display: flex;
+  flex-direction: column;
+
+  h1{
+    color: #A33498;
+  }
+}

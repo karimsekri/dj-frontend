@@ -5,8 +5,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Musiques from './components/Musiques';
 
 function App() {
-
-
   const maRoute = createBrowserRouter([
     {
       path: "/",
@@ -19,9 +17,7 @@ function App() {
   ]);
 
   return (
-    <>
-      <RouterProvider router={maRoute} />
-    </>
+    <RouterProvider router={maRoute} />
   )
 }
 

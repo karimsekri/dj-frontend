@@ -11,8 +11,6 @@ const Connexion = () => {
     
 
 
-
-
     const handleChangeLogin = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLogin(event.target.value)
         
@@ -22,41 +20,29 @@ const Connexion = () => {
         setPassword(event.target.value)
     }
 
-    const handleClickConnexion =  useCallback(() => {
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    "identifier": login,
-                    "password": password
-                })
-            };
-            const isConnectedApi = async () => {
-                const response = await fetch('http://localhost:1337/api/auth/local', requestOptions);
-                const data = await response.json();
-                console.log("login", login);
-                console.log("password", password);
-                console.log("data", data);
-                if (data.data === null) {
-                    alert("Connexion échouée")
-                    setIsConnected(false)
-                    setLogin("")
-                    setPassword("")
-                } else  {
-                    setIsConnected(true)
-                    
-                }
-
-                
-            }
-            isConnectedApi()
-            console.log("isConnected", isConnected);
-            if (isConnected === true) {
-                navigate("/musiques")                    
-            }else if (isConnected === false) {
-                navigate("/")                
-            }
-        }, [login, password, isConnected, navigate])
+    const handleClickConnexion =  useCallback( async () => {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                "identifier": login,
+                "password": password
+            })
+        };
+        const response = await fetch('http://localhost:1337/api/auth/local', requestOptions);
+        const data = await response.json();
+        console.log("login", login);
+        console.log("password", password);
+        console.log("data", data);
+        if (data.data === null) {
+            alert("Connexion échouée")
+            setLogin("")
+            setPassword("")
+        } else  {
+            navigate("/musiques")                    
+            
+        }
+    }, [login, password, isConnected, navigate])
     
 
 

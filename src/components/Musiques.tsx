@@ -1,27 +1,58 @@
-import { useEffect, useState } from "react";
+import { Attributes, useEffect, useState } from "react";
+import Song from "./Song";
+
+interface IMusique {
+    Titre: string,
+    chanteur: {
+        data: {
+            attributes: {
+                nom: string,
+                prenom: string
+            }
+        }
+    }
+
+
+}
+
 
 const Musiques = () => {
-    const [musiques, setMusiques] = useState([]);
+    const [musiques, setMusiques] = useState<IMusique[]>([]);
+    
 
 
     useEffect(() => {
         const getMusiquesApi = async () => {
-            const reponse = await fetch(`http://localhost:1337/api/musiques`);
+            const reponse = await fetch(`http://localhost:1337/api/musiques?populate=*`);
             const musiques = await reponse.json();
-            console.log("musiques", musiques.data);
-            setMusiques(musiques.data);
+            const newMusiques = musiques.data.map(
+                (m: any) => ({ ...m.attributes, id: m.id })
+            )
+            
+            setMusiques(newMusiques);
+            // console.log("newMusiques", newMusiques);
+           
+            
+            
         }
         getMusiquesApi()
     }, [])
 
     return (
         <>
-            <h1>Musiques</h1>
-            {musiques.map((valeur, index) => (
-                
-                <div key = {index}> {JSON.stringify(valeur.attributes.Titre)}</div>
-                   
-            ))}
+            <div className="musiques">
+                <h1>My personal DJ</h1>
+                {musiques.map((mySong, index) => (
+
+                    <Song
+                        key={index}
+                        title={mySong.Titre}
+                        nomChanteur={mySong.chanteur.data.attributes.nom}
+                        prenomChanteur={mySong.chanteur.data.attributes.prenom}
+                    />
+
+                ))}
+            </div>
         </>
     )
 }

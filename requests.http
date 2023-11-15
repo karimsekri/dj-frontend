@@ -10,8 +10,8 @@ content-type: application/json
 
 {
     "data": {
-        "Nom": "Bashung",
-        "Prenom": "Alain",
+        "nom": "Bashung",
+        "prenom": "Alain",
         "Date_de_naissance": "1947-12-01"
     }
 }
@@ -23,9 +23,10 @@ content-type: application/json
 {
     "data": {
         "Titre": "Ethnic & Deep House Mix 2023",
-        "LienYoutube": "https://www.youtube.com/watch?v=wVDgv2w6AcQ",
+        "lienYoutube": "https://www.youtube.com/watch?v=wVDgv2w6AcQ",
         "Favoris": true,
-        "DateDeSortie": "2023-01-01",
-        "couleurDeFond": "#132562"
+        "dateDeSortie": "2023-01-01",
+        "CouleurDeFond": "#132562",
+        "chanteur" : 5
     }
 }
