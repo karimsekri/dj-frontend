@@ -42,7 +42,7 @@ const Connexion = () => {
             navigate("/musiques")                    
             
         }
-    }, [login, password, isConnected, navigate])
+    }, [login, password, navigate])
     
 
 

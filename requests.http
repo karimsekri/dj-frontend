@@ -2,8 +2,13 @@
 GET http://localhost:1337/api/chanteurs
 ###
 GET http://localhost:1337/api/musiques
+
+###
+GET http://localhost:1337/api/musiques?filters[Favoris][$eq]=true&populate=*
 ###
 GET http://localhost:1337/api/musiques?populate=*
+###
+GET http://localhost:1337/api/musiques?populate=*&sort=createdAt:desc
 ###
 POST http://localhost:1337/api/chanteurs
 content-type: application/json

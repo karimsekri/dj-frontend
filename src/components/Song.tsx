@@ -1,16 +1,20 @@
-import { useState } from "react"
 
-const Song = (props: { title: string, nomChanteur: string, prenomChanteur: string }) => {
 
-    
+const Song = (props: { title: string, nomChanteur: string, prenomChanteur: string, favoris: boolean , couleurDeFond: string}) => {
+
+
 
     return (
-        <>  
-        <div className="song">
-            <h2>{props.title}</h2>
-            <p>{props.nomChanteur} {props.prenomChanteur}</p>
-            
-        </div>
+        <>
+            <div className="song" style={{backgroundColor: props.couleurDeFond}}>
+
+                <p>{props.prenomChanteur} {props.nomChanteur}</p>
+                <p>{props.title}</p>
+                <span >
+                 {props.favoris? "★" : ""}  
+                </span>
+
+            </div>
 
         </>
     )
