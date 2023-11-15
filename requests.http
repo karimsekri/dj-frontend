@@ -1,0 +1,31 @@
+
+GET http://localhost:1337/api/chanteurs
+###
+GET http://localhost:1337/api/musiques
+###
+GET http://localhost:1337/api/musiques?populate=*
+###
+POST http://localhost:1337/api/chanteurs
+content-type: application/json
+
+{
+    "data": {
+        "Nom": "Bashung",
+        "Prenom": "Alain",
+        "Date_de_naissance": "1947-12-01"
+    }
+}
+
+###
+POST http://localhost:1337/api/musiques
+content-type: application/json
+
+{
+    "data": {
+        "Titre": "Ethnic & Deep House Mix 2023",
+        "LienYoutube": "https://www.youtube.com/watch?v=wVDgv2w6AcQ",
+        "Favoris": true,
+        "DateDeSortie": "2023-01-01",
+        "couleurDeFond": "#132562"
+    }
+}

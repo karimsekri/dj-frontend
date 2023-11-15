@@ -8,12 +8,14 @@ const Connexion = () => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const [isConnected, setIsConnected] = useState(false);
+    
 
 
 
 
     const handleChangeLogin = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLogin(event.target.value)
+        
     }
 
     const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,8 +27,8 @@ const Connexion = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    "identifier": login.toString(),
-                    "password": password.toString()
+                    "identifier": login,
+                    "password": password
                 })
             };
             const isConnectedApi = async () => {
@@ -51,8 +53,10 @@ const Connexion = () => {
             console.log("isConnected", isConnected);
             if (isConnected === true) {
                 navigate("/musiques")                    
+            }else if (isConnected === false) {
+                navigate("/")                
             }
-        }, [])
+        }, [login, password, isConnected, navigate])
     
 
 
