@@ -47,7 +47,7 @@ body {
     color: #A33498;
     
   }
-  .musiquesFavoris{
+  .mySongs{
     display: flex;
     flex-direction: row;
     .song{
@@ -60,18 +60,6 @@ body {
     }
   }
   
-  .musiquesLastUpdate{
-    display: flex;
-    flex-direction: row;
-    .song{
-      background-color: #5E5BFF;
-      margin: 10px;
-      span{
-        color: #fcff5b;
-        font-size: 30px;
-      }
-    }
-  }
 
   .sousTitre{
     text-align: left;
@@ -82,4 +70,15 @@ body {
   }
   
 
+}
+
+.plus{
+  text-align: right;
+}
+
+.ajoutDeMusique{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

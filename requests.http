@@ -35,3 +35,20 @@ content-type: application/json
         "chanteur" : 5
     }
 }
+
+
+###
+POST http://localhost:1337/api/musiques?populate=*
+content-type: application/json
+
+{
+    "data":{
+                
+                "chanteur":1,
+                "Titre" : "chanson",
+                "CouleurDeFond" : "couleur",
+                "dateDeSortie" : "2023-11-16",
+                "lienYoutube" : "lienYoutube",
+                "Favoris" : true
+    }
+}

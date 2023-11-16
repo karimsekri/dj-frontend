@@ -1,5 +1,6 @@
 import { Attributes, useEffect, useState } from "react";
 import Song from "./Song";
+import { Link } from "react-router-dom";
 
 interface IMusique {
     Titre: string,
@@ -60,11 +61,12 @@ const Musiques = () => {
     }, [])
 
     return (
-        <>
+        <>  
+            <div className="plus"><Link to="/ajoutDeMusique">plus</Link></div>
             <div className="musiques">
                 <h1>My personal DJ</h1>
                 <div className="sousTitre"><h2>Mes musiques préférées</h2></div>
-                <div className="musiquesFavoris">
+                <div className="mySongs">
                     {musiquesFavoris.map((mySong, index) => (
                         
                         <Song 
@@ -78,7 +80,7 @@ const Musiques = () => {
                     ))}
                 </div>
                 <div className="sousTitre"><h2>Derniers ajouts</h2></div>
-                <div className="musiquesLastUpdate">
+                <div className="mySongs">
                     {musiques.map((mySong2, index2) => (
                         <Song
                             key={index2}

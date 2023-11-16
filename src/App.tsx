@@ -3,6 +3,7 @@ import './App.scss'
 import Connexion from './components/Connexion';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Musiques from './components/Musiques';
+import AjoutDeMusique from './components/AjoutDeMusique';
 
 function App() {
   const maRoute = createBrowserRouter([
@@ -14,6 +15,10 @@ function App() {
       path: "/musiques",
       element: <Musiques />,
     },
+    {
+      path: "/ajoutDeMusique",
+      element: <AjoutDeMusique />,
+    }
   ]);
 
   return (
